@@ -17,7 +17,7 @@ st.markdown("---")
 @st.cache_data
 def load_data():
     #df = pd.read_csv("/content/drive/MyDrive/Online Sales Data.csv") # Corrected file path
-    df = pd.read_csv("/Online Sales Data.csv") # Corrected file path
+    df = pd.read_csv("/mount/src/empresa_one/Online Sales Data.csv") # Corrected file path
     df['Date'] = pd.to_datetime(df['Date'])
     df['Month'] = df['Date'].dt.to_period('M').astype(str)
     df['Year'] = df['Date'].dt.year

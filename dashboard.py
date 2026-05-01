@@ -1,5 +1,3 @@
-%%writefile dashboard.py
-# Guardar el contenido del dashboard.py en un archivo
 import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
@@ -11,12 +9,12 @@ st.set_page_config(page_title="Dashboard de Ventas", layout="wide", page_icon="�
 
 # Título y descripción
 st.title("📊 Dashboard Interactivo de Ventas Online")
-st.markdown("--- Jardiel---")
+st.markdown("---")
 
 # Cargar datos
 @st.cache_data
 def load_data():
-    df = pd.read_csv("Online Sales Data.csv") # Corrected file path
+    df = pd.read_csv("/content/drive/MyDrive/Online Sales Data.csv") # Corrected file path
     df['Date'] = pd.to_datetime(df['Date'])
     df['Month'] = df['Date'].dt.to_period('M').astype(str)
     df['Year'] = df['Date'].dt.year

@@ -1,4 +1,4 @@
-%%writefile dashboard.py
+%%writefile /mount/src/empresa_one/Online/dashboard.py
 # Guardar el contenido del dashboard.py en un archivo
 import pandas as pd
 import plotly.express as px
@@ -16,7 +16,7 @@ st.markdown("--- Jardiel---")
 # Cargar datos
 @st.cache_data
 def load_data():
-    df = pd.read_csv("/mount/src/empresa_one/Online Sales Data.csv") # Corrected file path
+    df = pd.read_csv("/mount/src/empresa_one/Online/Sales Data.csv") # Corrected file path
     df['Date'] = pd.to_datetime(df['Date'])
     df['Month'] = df['Date'].dt.to_period('M').astype(str)
     df['Year'] = df['Date'].dt.year
